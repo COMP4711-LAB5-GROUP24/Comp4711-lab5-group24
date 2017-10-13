@@ -12,6 +12,7 @@ class Tasks extends CSV_Model {
     }
 
     /**
+     * Return all the tasks data ordered by category. 
      */
     function getCategorizedTasks()
     {
@@ -35,6 +36,31 @@ class Tasks extends CSV_Model {
 
         return $converted;
     }
+
+    /**
+     * Return all the tasks data ordered by category. 
+     */
+
+    function getPrioritizedTasks()
+    {
+        foreach ($this->all() as $task)
+        {
+            if ($task->status != 2)
+                $undone[] = $task;
+        }
+
+        // order them by priority
+        usort($undone, "orderByPriority");
+
+        foreach ($undone as $task)
+            $task->priority = $this->app->priority($task->priority);
+
+        foreach ($undone as $task)
+            $converted[] = (array) $task;
+
+        return $converted;
+    }
+
 }
     // return -1, 0, or 1 of $a's category name is earlier, equal to, or later than $b's
     function orderByCategory($a, $b)
@@ -42,6 +68,17 @@ class Tasks extends CSV_Model {
         if ($a->group < $b->group)
             return -1;
         elseif ($a->group > $b->group)
+            return 1;
+        else
+            return 0;
+    }
+
+    // return -1, 0, or 1 of $a's priority is higher, equal to, or lower than $b's
+    function orderByPriority($a, $b)
+    {
+        if ($a->priority > $b->priority)
+            return -1;
+        elseif ($a->priority < $b->priority)
             return 1;
         else
             return 0;
