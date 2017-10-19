@@ -42,6 +42,7 @@
      */
 
 
+
     /**
      * Generate the tasks panel with the given prioritized tasks data. 
      */
@@ -54,9 +55,7 @@
         return $this->parser->parse('by_priority', $parms, true);   
     }
 
-    /**
-     * Generate the tasks panel with the given categoryized tasks data. 
-     */
+    
     function makeCategorizedPanel()
     {
         $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
@@ -98,4 +97,6 @@
  */
 
 
+
 ?>
+

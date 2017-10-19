@@ -1,9 +1,16 @@
-<h4>Name: JIM</h4>
+#### Name: Group24
 
 
-Please, plase, please help with with my COMP1234 homework. I am clueless.
+**Help**, I need somebody
 
-I can pay you in chocolate chip cookies, one dozen per feature
-completed bug free!!!
+**Help**, not just anybody
 
-Contact me via PM at 123-456-7890.
++ **Help** me if you can, I'm feeling down
+
+And I do appreciate you being round
+
++ **Help** me get my feet back on the ground
+
+Won't you please, please **help** me, **help** me, **help** me
+
+*---[The Beatles "**Help**"](https://en.wikipedia.org/wiki/Help!_(album))*
