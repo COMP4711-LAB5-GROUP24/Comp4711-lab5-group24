@@ -224,8 +224,8 @@ class Memory_Model extends CI_Model implements DataMapper
 	// Determine the highest key used
 	function highest()
 	{
-	    end($this->_data);
-	    return key($this->_data);
+		$last = end($this->_data);
+		return $last[$this->_keyfield];
 	}
 
 	// Retrieve first record from a table.
