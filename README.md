@@ -1,5 +1,7 @@
-# starter-todo
-Starter project for COMP4711 lab 5, Fall 2017
+# todo-list lab
+Start date: 19, Oct, 2017
 
-It "works" out of the box, sort of, but needs beefing up :(
-Your job is to fix it, per lab 5 directions :)
+Members: Yuheng Song (CAPTAIN), Haihua Tan, Junnan Tang
+
+Project for COMP4711 lab 5 & lab 6, Fall 2017
+
