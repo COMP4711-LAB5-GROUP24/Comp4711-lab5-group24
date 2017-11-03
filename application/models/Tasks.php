@@ -49,7 +49,7 @@ class Tasks extends CSV_Model {
             $converted[] = (array) $task;
         return $converted;
     }
-    
+
     // provide form validation rules
     public function rules() {
         $config = array(
@@ -61,23 +61,23 @@ class Tasks extends CSV_Model {
         return $config;
     }
 }
-    // return -1, 0, or 1 of $a's category name is earlier, equal to, or later than $b's
-    function orderByCategory($a, $b)
-    {
-        if ($a->group < $b->group)
-            return -1;
-        elseif ($a->group > $b->group)
-            return 1;
-        else
-            return 0;
-    }
-    // return -1, 0, or 1 of $a's priority is higher, equal to, or lower than $b's
-    function orderByPriority($a, $b)
-    {
-        if ($a->priority > $b->priority)
-            return -1;
-        elseif ($a->priority < $b->priority)
-            return 1;
-        else
-            return 0;
-    }
+// return -1, 0, or 1 of $a's category name is earlier, equal to, or later than $b's
+function orderByCategory($a, $b)
+{
+    if ($a->group < $b->group)
+        return -1;
+    elseif ($a->group > $b->group)
+        return 1;
+    else
+        return 0;
+}
+// return -1, 0, or 1 of $a's priority is higher, equal to, or lower than $b's
+function orderByPriority($a, $b)
+{
+    if ($a->priority > $b->priority)
+        return -1;
+    elseif ($a->priority < $b->priority)
+        return 1;
+    else
+        return 0;
+}
