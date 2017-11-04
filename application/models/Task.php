@@ -1,5 +1,5 @@
 <?php
-class Entity extends CI_Model {
+class Task extends Entity {
     private $task;
     private $priority;
     private $size;
