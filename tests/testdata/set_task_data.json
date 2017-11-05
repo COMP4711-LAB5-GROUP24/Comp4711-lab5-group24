@@ -24,9 +24,9 @@
         "expected": false 
     },
     {
-        "case":"priority: invalid input - string",
+        "case":"priority: invalid input - non-numeric string",
         "property" : "priority",
-        "input":"1",
+        "input":"abc",
         "expected": false 
     },
     {
@@ -36,33 +36,33 @@
         "expected": false 
     },
     {
-        "case" : "priority: invalid input - less than 0",
+        "case" : "priority: invalid input - less than lower bound",
         "property" : "priority",
-        "input" : -1,
+        "input" : 0,
         "expected": false 
     },
     {
-        "case":"priority: invalid input - greater than 3",
+        "case":"priority: invalid input - greater than upper bound",
         "property" : "priority",
         "input": 4,
         "expected": false 
     },
     {
-        "case" : "priority: valid input - equal to 0",
+        "case" : "priority: valid input - equal to lower bound",
         "property" : "priority",
-        "input" : 0,
+        "input" : 1,
         "expected": true 
     },
     {
-        "case":"priority: valid input - equal to 4",
+        "case":"priority: valid input - equal to upper bound",
         "property" : "priority",
         "input": 3,
         "expected": true 
     },
     {
-        "case":"size: invalid input - string",
+        "case":"size: invalid input - non-numeric string",
         "property" : "size",
-        "input":"1",
+        "input":"abc",
         "expected": false 
     },
     {
@@ -74,7 +74,7 @@
     {
         "case" : "size: invalid input - less than lower bound",
         "property" : "size",
-        "input" : -1,
+        "input" : 0,
         "expected": false 
     },
     {
@@ -86,7 +86,7 @@
     {
         "case" : "size: valid input - equal to lower bound",
         "property" : "size",
-        "input" : 0,
+        "input" : 1,
         "expected": true 
     },
     {
@@ -96,9 +96,9 @@
         "expected": true 
     },
     {
-        "case":"group: invalid input - string",
+        "case":"group: invalid input - non-numeric string",
         "property" : "group",
-        "input":"1",
+        "input":"abc",
         "expected": false 
     },
     {
@@ -110,7 +110,7 @@
     {
         "case" : "group: invalid input - less than lower bound",
         "property" : "group",
-        "input" : -1,
+        "input" : 0,
         "expected": false 
     },
     {
@@ -122,7 +122,7 @@
     {
         "case" : "group: valid input - equal to lower bound",
         "property" : "group",
-        "input" : 0,
+        "input" : 1,
         "expected": true 
     },
     {

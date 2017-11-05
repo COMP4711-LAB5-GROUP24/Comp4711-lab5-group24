@@ -11,7 +11,7 @@ class TaskTest extends TestCase
     {
         $taskEntity = new Task;
         $taskEntity->$property = $input;
-        $this->assertEquals($expected, $taskEntity->$property == $input);
+        $this->assertSame($expected, $taskEntity->$property == $input);
     }
 
     public function TaskDataProvider()

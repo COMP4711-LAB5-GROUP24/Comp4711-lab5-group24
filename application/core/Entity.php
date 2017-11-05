@@ -17,5 +17,13 @@ class Entity extends CI_Model{
         $this->$key = $value;
         return $this;
     }
+
+    public function __get($key)
+    {
+        $method = 'get' . str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', $key)));
+        if (method_exists($this, $method))
+            return $this->$method();
+        return $this->$key; 
+    } 
 }
 
