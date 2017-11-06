@@ -12,13 +12,13 @@
         "expected": false
     },
     {
-        "case":"task: invalid input - longer than maximum limitation",
+        "case":"task: invalid input - equal to maximum length",
         "property" : "task",
         "input":"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
         "expected": true
     },
     {
-        "case":"task: invalid input - longer than maximum limitation",
+        "case":"task: invalid input - invalid character(s)",
         "property" : "task",
         "input":"abc@",
         "expected": false 
