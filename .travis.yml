@@ -8,4 +8,4 @@ braches:
 before_install:
   - travis_retry composer self-update
   - composer update
-script: phpunit
+script: phpunit --coverage-html ./report
