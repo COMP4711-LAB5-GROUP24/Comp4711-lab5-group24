@@ -359,4 +359,5 @@ class MY_Model2 extends MY_Model
 include_once 'RDB_Model.php';	// backed by an RDB
 include_once 'Memory_Model.php';	// In-memory only
 include_once 'CSV_Model.php';	// CSV persisted
+include_once 'XML_Model.php';	// CSV persisted
 include_once 'Entity.php';
