@@ -2,13 +2,13 @@
 /**
  * A tasks list data model class that use csv file as persistance.
  */
-class Tasks extends CSV_Model {
+class Tasks extends XML_Model {
     /**
      * Constructor
      */
     public function __construct()
     {
-        parent::__construct(APPPATH . '../data/tasks.csv', 'id');
+        parent::__construct(APPPATH . '../data/tasks.xml', 'id');
     }
     /**
      * Return all the tasks data ordered by category. 
