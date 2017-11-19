@@ -101,7 +101,8 @@ class Mtce extends Application {
             'fsize' => form_label('Size') . form_dropdown('size', $this->app->size(), $task->size),
             'fgroup' => form_label('Group') . form_dropdown('group', $this->app->group(), $task->size),
             'fstatus' => form_label('Status') . form_dropdown('status', $this->app->status(), $task->status),
-            'zsubmit'    => form_submit('submit', 'Update the TODO task'),
+            'fflag' => form_label('Flag') . form_dropdown('flag', $this->app->flag(), $task->flag),
+            'zsubmit'    => form_submit(null, 'Update the TODO task'),
         );
         $this->data = array_merge($this->data, $fields);
         $this->data['pagebody'] = 'itemedit';
@@ -134,8 +135,9 @@ class Mtce extends Application {
         } else
         {
             $this->alert('<strong>Validation errors!<strong><br>' . validation_errors(), 'danger');
+            $this->showit();
         }
-        $this->showit();
+        $this->index();
     }
     // build a suitable error mesage
     private function alert($message) {

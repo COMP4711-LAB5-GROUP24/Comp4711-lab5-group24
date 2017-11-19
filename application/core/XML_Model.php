@@ -9,6 +9,8 @@
  */
 class XML_Model extends Memory_Model
 {
+    private $_set;
+    private $_record;
 //---------------------------------------------------------------------------
 //  Housekeeping methods
 //---------------------------------------------------------------------------
@@ -33,6 +35,8 @@ class XML_Model extends Memory_Model
 		// remember the other constructor fields
 		$this->_keyfield = $keyfield;
 		$this->_entity = $entity;
+        $this->_set = lcfirst(get_class($this)); //defaut value, overrided in load function
+        $this->_record = $this->_set . '_item'; //defaut value, overrided in load function
 
 		// start with an empty collection
 		$this->_data = array(); // an array of objects
@@ -54,8 +58,13 @@ class XML_Model extends Memory_Model
         $doc->load($this->_origin);
 
         $root = $doc->documentElement;
+        $this->_set = $root->tagName;
 
         $first = $root->firstChild;
+        $this->_record = $first->tagName;
+
+        //var_dump($this->_set);
+        //var_dump($this->_record);
 
         foreach ($first->childNodes as $property)
         {
@@ -90,6 +99,31 @@ class XML_Model extends Memory_Model
 	{
 		// rebuild the keys table
 		$this->reindex();
+        $doc = new DOMDocument('1.0', 'utf-8');
+        $doc->formatOutput = true;
+
+        $root = $doc->createElement($this->_set); 
+
+        foreach ($this->_data as $record)
+        {
+            foreach ($this->_data as $record)
+            {
+                $item = $doc->createElement($this->_record);
+                foreach ($record as $key => $value) 
+                {
+                    //var_dump($key, $value);
+                    $property = $doc->createElement($key, $value);
+                    $item->appendChild($property);
+                }
+                $root->appendChild($item);
+            }
+            //var_dump($root);
+        }
+        $doc->appendChild($root);
+
+        //var_dump($doc->saveXML());
+        $doc->save($this->_origin);
+
 		//---------------------
         /*
 		if (($handle = fopen($this->_origin, "w")) !== FALSE)

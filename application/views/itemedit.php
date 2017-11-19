@@ -5,6 +5,7 @@
     {fsize}
     {fgroup}
     {fstatus}
+    {fflag}
     {zsubmit}
 </form>
     {error}
