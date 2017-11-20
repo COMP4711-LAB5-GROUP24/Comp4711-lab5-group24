@@ -60,6 +60,9 @@ class XML_Model extends Memory_Model
         $root = $doc->documentElement;
         $this->_set = $root->tagName;
 
+        if (!$root->hasChildNodes())
+            return;
+
         $first = $root->firstChild;
         $this->_record = $first->tagName;
 
