@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <tasks>
   <task_item>
     <id>1</id>
@@ -25,9 +25,9 @@
     <task>Wash the car</task>
     <priority>2</priority>
     <size>2</size>
-    <group>1</group>
+    <group>2</group>
     <deadline>20171116</deadline>
-    <status>2</status>
+    <status>1</status>
     <flag>1</flag>
   </task_item>
   <task_item>
@@ -49,5 +49,315 @@
     <deadline>20170928</deadline>
     <status>1</status>
     <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>7</id>
+    <task>hhhh</task>
+    <priority>3</priority>
+    <size>1</size>
+    <group>1</group>
+    <deadline/>
+    <status>1</status>
+    <flag/>
+  </task_item>
+  <task_item>
+    <id>1</id>
+    <task>COMP4711 assignment</task>
+    <priority>3</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20170219</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>2</id>
+    <task>Mow the lawn</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20170314</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>3</id>
+    <task>Wash the car</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20171116</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>4</id>
+    <task>Paint the fence</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20171210</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>6</id>
+    <task>Intramural hockey game</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>4</group>
+    <deadline>20170928</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>7</id>
+    <task>hhhh</task>
+    <priority>3</priority>
+    <size>1</size>
+    <group>1</group>
+    <deadline/>
+    <status>1</status>
+    <flag/>
+  </task_item>
+  <task_item>
+    <id>1</id>
+    <task>COMP4711 assignment</task>
+    <priority>3</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20170219</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>2</id>
+    <task>Mow the lawn</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20170314</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>3</id>
+    <task>Wash the car</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20171116</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>4</id>
+    <task>Paint the fence</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20171210</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>6</id>
+    <task>Intramural hockey game</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>4</group>
+    <deadline>20170928</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>7</id>
+    <task>hhhh</task>
+    <priority>3</priority>
+    <size>1</size>
+    <group>1</group>
+    <deadline/>
+    <status>1</status>
+    <flag/>
+  </task_item>
+  <task_item>
+    <id>1</id>
+    <task>COMP4711 assignment</task>
+    <priority>3</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20170219</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>2</id>
+    <task>Mow the lawn</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20170314</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>3</id>
+    <task>Wash the car</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20171116</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>4</id>
+    <task>Paint the fence</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20171210</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>6</id>
+    <task>Intramural hockey game</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>4</group>
+    <deadline>20170928</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>7</id>
+    <task>hhhh</task>
+    <priority>3</priority>
+    <size>1</size>
+    <group>1</group>
+    <deadline/>
+    <status>1</status>
+    <flag/>
+  </task_item>
+  <task_item>
+    <id>1</id>
+    <task>COMP4711 assignment</task>
+    <priority>3</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20170219</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>2</id>
+    <task>Mow the lawn</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20170314</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>3</id>
+    <task>Wash the car</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20171116</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>4</id>
+    <task>Paint the fence</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20171210</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>6</id>
+    <task>Intramural hockey game</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>4</group>
+    <deadline>20170928</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>7</id>
+    <task>hhhh</task>
+    <priority>3</priority>
+    <size>1</size>
+    <group>1</group>
+    <deadline/>
+    <status>1</status>
+    <flag/>
+  </task_item>
+  <task_item>
+    <id>1</id>
+    <task>COMP4711 assignment</task>
+    <priority>3</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20170219</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>2</id>
+    <task>Mow the lawn</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20170314</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>3</id>
+    <task>Wash the car</task>
+    <priority>2</priority>
+    <size>2</size>
+    <group>2</group>
+    <deadline>20171116</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>4</id>
+    <task>Paint the fence</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>1</group>
+    <deadline>20171210</deadline>
+    <status>2</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>6</id>
+    <task>Intramural hockey game</task>
+    <priority>1</priority>
+    <size>2</size>
+    <group>4</group>
+    <deadline>20170928</deadline>
+    <status>1</status>
+    <flag>1</flag>
+  </task_item>
+  <task_item>
+    <id>7</id>
+    <task>hhhh</task>
+    <priority>3</priority>
+    <size>1</size>
+    <group>1</group>
+    <deadline/>
+    <status>1</status>
+    <flag/>
   </task_item>
 </tasks>
