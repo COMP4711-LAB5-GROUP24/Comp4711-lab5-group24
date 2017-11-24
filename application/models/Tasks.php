@@ -20,6 +20,8 @@ class Tasks extends XML_Model {
     function getCategorizedTasks()
     {
         // extract the undone tasks
+        $undone = array();
+        $converted = array();
         foreach ($this->all() as $task)
         {
             if ($task->status != 2)
@@ -40,6 +42,8 @@ class Tasks extends XML_Model {
      */
     function getPrioritizedTasks()
     {
+        $undone = array();
+        $converted = array();
         foreach ($this->all() as $task)
         {
             if ($task->status != 2)

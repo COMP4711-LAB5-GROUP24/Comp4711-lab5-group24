@@ -35,12 +35,10 @@ class XML_Model extends Memory_Model
 		// remember the other constructor fields
 		$this->_keyfield = $keyfield;
 		$this->_entity = $entity;
-        $this->_set = lcfirst(get_class($this)); //defaut value, overrided in load function
-        $this->_record = $this->_set . '_item'; //defaut value, overrided in load function
 
 		// start with an empty collection
 		$this->_data = array(); // an array of objects
-		$this->fields = array(); // an array of strings
+		$this->_fields = array(); // an array of strings
 		// and populate the collection
 		$this->load();
 	}
@@ -55,41 +53,30 @@ class XML_Model extends Memory_Model
 
         $doc->preserveWhiteSpace = false; // otherwise the whitespaces will generate "#text" nodes in the node list
 
+        // load xml content from file 
         $doc->load($this->_origin);
 
-        $root = $doc->documentElement;
-        $this->_set = $root->tagName;
+        // read the structure information from description part of the xml file
+        $this->_set = $doc->getElementsByTagName('set_name')->item(0)->nodeValue;
+        $this->_record = $doc->getElementsByTagName('record_name')->item(0)->nodeValue;
 
-        if (!$root->hasChildNodes())
-            return;
-
-        $first = $root->firstChild;
-        $this->_record = $first->tagName;
-
-        //var_dump($this->_set);
-        //var_dump($this->_record);
-
-        foreach ($first->childNodes as $property)
+        // read fileds infomation from the description part of the xml file
+        foreach ($doc->getElementsByTagName('field') as $field) 
         {
-            $this->_fields []= $property->tagName;
+            $this->_fields [] = $field->nodeValue;
         }
 
-        //var_dump($this->_fields);
-
-        foreach ($root->childNodes as $item)
+        // read actual data from the data part 
+        foreach ($doc->getElementsByTagName($this->_record) as $recordNode)
         {
             $record = new stdClass();
-            foreach ($item->childNodes as $property)
+            foreach($recordNode->childNodes as $propertyNode)
             {
-                //var_dump($property->tagName);
-                //var_dump($property->nodeValue);
-                $record->{$property->tagName} = $property->nodeValue;
-            } 
+                $record->{$propertyNode->tagName} = $propertyNode->nodeValue;
+            }
 
             $this->_data []= $record;
         }
-
-        //var_dump($this->_data);
 
 		$this->reindex();
 	}
@@ -105,7 +92,29 @@ class XML_Model extends Memory_Model
         $doc = new DOMDocument('1.0', 'utf-8');
         $doc->formatOutput = true;
 
-        $root = $doc->createElement($this->_set); 
+        // create root node
+        $root = $doc->createElement('records'); 
+
+        // store the meta data (description about the data)
+        $description = $doc->createElement('description');
+        $setDescription = $doc->createElement('set_name', $this->_set);
+        $recordDescription = $doc->createElement('record_name', $this->_record);
+        $fieldsDescription = $doc->createElement('fields');
+
+        foreach ($this->_fields as $field) 
+        {
+            $fieldsDescription->appendChild($doc->createElement('field', $field)); 
+        }
+        $description->appendChild($setDescription);
+        $description->appendChild($recordDescription);
+        $description->appendChild($fieldsDescription);
+
+        $root->appendChild($description);
+
+        $dataNode = $doc->createElement($this->_set);
+
+        // store the actual data
+        $data = $this->_data;
 
         foreach ($this->_data as $record)
         {
@@ -118,25 +127,15 @@ class XML_Model extends Memory_Model
                     $property = $doc->createElement($key, $value);
                     $item->appendChild($property);
                 }
-                $root->appendChild($item);
+                $dataNode->appendChild($item);
             }
             //var_dump($root);
         }
+        $root->appendChild($dataNode);
         $doc->appendChild($root);
 
         //var_dump($doc->saveXML());
         $doc->save($this->_origin);
 
-		//---------------------
-        /*
-		if (($handle = fopen($this->_origin, "w")) !== FALSE)
-		{
-			fputcsv($handle, $this->_fields);
-			foreach ($this->_data as $key => $record)
-				fputcsv($handle, array_values((array) $record));
-			fclose($handle);
-		}
-         */
-		// --------------------
 	}
 }
