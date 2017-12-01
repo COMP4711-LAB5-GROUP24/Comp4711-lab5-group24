@@ -113,28 +113,23 @@ class XML_Model extends Memory_Model
 
         $dataNode = $doc->createElement($this->_set);
 
-        // store the actual data
-        $data = $this->_data;
-
         foreach ($this->_data as $record)
         {
-            foreach ($this->_data as $record)
+            $item = $doc->createElement($this->_record);
+            foreach ($record as $key => $value) 
             {
-                $item = $doc->createElement($this->_record);
-                foreach ($record as $key => $value) 
-                {
-                    //var_dump($key, $value);
-                    $property = $doc->createElement($key, $value);
-                    $item->appendChild($property);
-                }
-                $dataNode->appendChild($item);
+                //var_dump($key, $value);
+                $property = $doc->createElement($key, $value);
+                $item->appendChild($property);
             }
-            //var_dump($root);
+            $dataNode->appendChild($item);
         }
+        //var_dump($root);
         $root->appendChild($dataNode);
         $doc->appendChild($root);
 
         //var_dump($doc->saveXML());
+        
         $doc->save($this->_origin);
 
 	}
