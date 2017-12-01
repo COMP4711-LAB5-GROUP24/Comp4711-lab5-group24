@@ -2,17 +2,13 @@
 /**
  * A tasks list data model class that use csv file as persistance.
  */
-class Tasks extends XML_Model {
+class Tasks extends CSV_Model {
     /**
      * Constructor
      */
     public function __construct()
     {
-        // persisted with CSV file
-        //parent::__construct(APPPATH . '../data/tasks.csv', 'id');
-        
-        // persisted with XML file
-        parent::__construct(APPPATH . '../data/tasks.xml', 'id');
+        parent::__construct(APPPATH . '../data/tasks.csv', 'id');
     }
     /**
      * Return all the tasks data ordered by category. 
@@ -20,8 +16,6 @@ class Tasks extends XML_Model {
     function getCategorizedTasks()
     {
         // extract the undone tasks
-        $undone = array();
-        $converted = array();
         foreach ($this->all() as $task)
         {
             if ($task->status != 2)
@@ -42,8 +36,6 @@ class Tasks extends XML_Model {
      */
     function getPrioritizedTasks()
     {
-        $undone = array();
-        $converted = array();
         foreach ($this->all() as $task)
         {
             if ($task->status != 2)
